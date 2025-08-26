@@ -1,6 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import './App.css'; // Your main stylesheet
-import './index.css'; // Your global styles
+import WAVES from 'vanta/dist/vanta.waves.min';
+import * as THREE from 'three';
+import './App.css';
+import './index.css';
 
 // === Rishabh Tyagi — Portfolio without Tailwind ===
 
@@ -243,18 +245,44 @@ const ContactSection = ({ data }) => {
 
 // ================== MAIN APP ==================
 export default function App() {
+  const [vantaEffect, setVantaEffect] = useState(null);
+  const vantaRef = useRef(null);
+
+  // VANTA.JS BACKGROUND EFFECT HOOK
+  useEffect(() => {
+    if (!vantaEffect) {
+      setVantaEffect(
+        WAVES({
+          el: vantaRef.current,
+          THREE: THREE,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color: 0x003566,
+          shininess: 35.00,
+          waveHeight: 18.00,
+          waveSpeed: 0.85,
+          zoom: 0.8,
+        })
+      );
+    }
+    // Cleanup function to destroy the effect on component unmount
+    return () => {
+      if (vantaEffect) vantaEffect.destroy();
+    };
+  }, [vantaEffect]);
+
   const data = useMemo(() => ({
       name: "Rishabh Tyagi",
       taglinePhrases: ["AI Enthusiast", "Problem Solver", "Future Innovator"],
       intro: "I build smart applications using AI, ML, and automation to solve real-world problems.",
       email: "tyagirishabh2004@gmail.com",
-      phone: "+91 8595861221",
-      
-      // THIS IS THE CORRECT PATH.
-      // It works as long as "Rishabh_Tyagi_Resume.pdf" is in the "public" folder.
-      // Do NOT use the full "D:\..." path here.
+      phone: "+91 7217543838",
       resumeUrl: "/Rishabh_Tyagi_Resume.pdf", 
-      
       linkedin: "https://www.linkedin.com/in/rishabh-tyagi-380110310/",
       github: "https://github.com/RishabhTyagi78",
       skillsRadial: [
@@ -316,12 +344,8 @@ export default function App() {
   }, []);
 
   return (
-    <div className="selection-bg">
-      <div className="background-container">
-        <div className="background-gradient" />
-        <div className="background-radial" />
-      </div>
-
+    // The ref is now attached to the main div, which acts as the Vanta container
+    <div ref={vantaRef} className="app-container selection-bg">
       <nav className="nav">
         <div className="nav-container">
           <a href="#hero" className="nav-brand text-gradient">{data.name}</a>
@@ -333,7 +357,7 @@ export default function App() {
             ))}
           </div>
           <button className="mobile-menu-button" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle Menu">
-            <svg stroke="currentColor" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            <svg stroke="currentColor" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7"></path></svg>
           </button>
         </div>
         {mobileMenuOpen && (
