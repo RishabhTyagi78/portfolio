@@ -194,7 +194,7 @@ const ContactSection = ({ data }) => {
             </div>
           </div>
           <div className="contact-info-card">
-             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" ><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" ><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
             <div>
               <strong>Phone</strong>
               <br />
@@ -202,12 +202,12 @@ const ContactSection = ({ data }) => {
             </div>
           </div>
           <div className="contact-socials">
-             <a href={data.github} target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="GitHub">
+              <a href={data.github} target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="GitHub">
                 <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-             </a>
-             <a href={data.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
+              </a>
+              <a href={data.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
                 <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-             </a>
+              </a>
           </div>
           <a href={data.resumeUrl} download className="button button-primary">
             Download Resume
@@ -281,7 +281,7 @@ export default function App() {
       taglinePhrases: ["AI Enthusiast", "Problem Solver", "Future Innovator"],
       intro: "I build smart applications using AI, ML, and automation to solve real-world problems.",
       email: "tyagirishabh2004@gmail.com",
-      phone: "+91 7217543838",
+      phone: "+91 8595861221",
       resumeUrl: "/Rishabh_Tyagi_Resume.pdf", 
       linkedin: "https://www.linkedin.com/in/rishabh-tyagi-380110310/",
       github: "https://github.com/RishabhTyagi78",
@@ -301,6 +301,22 @@ export default function App() {
       ],
       projects: [
         {
+            title: "Voice-Controlled Automation",
+            desc: "A voice-activated system to control PC tasks, apps, and browsers. Features non-blocking screenshot capture with OCR for on-screen text interaction.",
+            tech: ["Python", "SpeechRecognition", "PyAutoGUI", "Pytesseract"],
+            img: "https://picsum.photos/seed/project4/600/400",
+            status: "Completed",
+            link: "https://github.com/RishabhTyagi78"
+        },
+        {
+            title: "E-commerce Website",
+            desc: "A modern, fully-responsive e-commerce platform featuring a dynamic product catalog, user authentication, and a seamless shopping cart experience.",
+            tech: ["React", "JavaScript", "HTML", "CSS"],
+            img: "https://picsum.photos/seed/project3/600/400",
+            status: "Completed",
+            link: "https://e-commerce-website-rishabht-blond.vercel.app/"
+        },
+        {
           title: "Chat with PDF",
           desc: "AI chatbot for PDFs using FAISS + Google Gemini to retrieve semantically relevant answers from uploaded documents.",
           tech: ["Python", "Streamlit", "FAISS", "Gemini"],
@@ -318,11 +334,11 @@ export default function App() {
         },
       ],
       journey: [
-        { year: "2021", text: "Started coding with Python" },
-        { year: "2022", text: "Learned web development" },
-        { year: "2023", text: "Built first AI/ML projects" },
-        { year: "2024", text: "Hackathon & team projects" },
-        { year: "2025", text: "Advanced AI apps & certifications" },
+        { year: "2022", text: "Completed my CBSE board exams and took my first steps into programming, learning the fundamentals of Python and logical problem-solving." },
+        { year: "2023", text: "Explored the world of web development, mastering HTML, CSS, and JavaScript. Began building dynamic user interfaces with React." },
+        { year: "2024", text: "Dived deep into Artificial Intelligence, building my first machine learning models. Gained proficiency in core libraries like TensorFlow, Scikit-learn, and Pandas." },
+        { year: "2025 (Early)", text: "Applied my skills in practical scenarios, developing complex projects like voice-controlled automation and participating in team-based hackathons." },
+        { year: "2025 (Present)", text: "Focused on creating advanced, end-to-end AI applications and pursuing industry-relevant certifications to further solidify my expertise." },
       ],
     }), []);
 
